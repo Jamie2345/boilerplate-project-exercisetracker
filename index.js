@@ -7,6 +7,7 @@ require('dotenv').config()
 
 const createUserRoute = require('./routes/create_users')
 const exercisesRoute = require('./routes/user_exercises')
+const getUsersRoute = require('./routes/get_users')
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
@@ -30,3 +31,4 @@ const listener = app.listen(process.env.PORT || 3000, () => {
 
 app.use('/api', createUserRoute)
 app.use('/api', exercisesRoute)
+app.use('/api', getUsersRoute)
